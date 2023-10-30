@@ -1,0 +1,9 @@
+---
+- name: To print the inventory and hostname of the system
+  hosts: web_nodes
+  tasks:
+    - name: Inventory Name
+      debug: var=inventory_hostname
+
+    - name: hostname
+      debug: var=ansible_hostname

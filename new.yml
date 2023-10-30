@@ -1,0 +1,10 @@
+---
+- hosts: web_nodes
+  tasks:
+    - name: open a file in root directory 
+      command: cat /home/osboxes/whoiam
+      register: myname
+
+    - name: print the name in the file
+      debug:
+        msg: "My name is {{myname}}"
