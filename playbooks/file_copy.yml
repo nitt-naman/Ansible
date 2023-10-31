@@ -1,0 +1,9 @@
+--- 
+- name: To copy files from central server to node server
+  hosts: ansible_target
+  tasks:
+    - name: Transfer file from localhost to ansible_target
+      synchronize:
+        src: ~/Desktop/new.txt
+        dest: ~/Desktop/new.txt
+      delegate_to: localhosts

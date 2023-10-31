@@ -1,0 +1,17 @@
+---
+- name: Copy content of file from one server to another
+  hosts: web_nodes
+  become: yes
+  tasks:
+    - name: copy the content from the localhost (Desktop/new.txt)
+      command: cat /home/osboxes/Desktop/new.txt
+      register: my_desc
+      when: inventory_hostname=="localhosts"
+    
+    - debug: var=my_desc.stdout
+
+    - name: copy the contents of register on target folders
+      copy:
+        content: "{{ my_desc.stdout }}"
+        dest: /home/osboxes/Desktop/new1.txt
+      when: inventory_hostname=="localhosts"

@@ -1,0 +1,17 @@
+---
+## playbook to install git on remote server
+- name: "installing common utilities on remote server"
+  hosts: web_nodes
+  become: yes
+  become_user: root
+  tasks:
+    - name: installing git on centos
+      yum:
+        name: git
+        state: latest
+    - name: check the version
+      command: git --version
+      register: output
+    - debug:
+        msg: The curent version of git is {{output.stdout_lines}}
+
