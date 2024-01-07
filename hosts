@@ -52,7 +52,7 @@
 ## green.example.com
 ## blue.example.com
 
-localhosts ansible_host=192.168.1.23 ansible_connection=ssh ansible_port=22 ansible_user=osboxes ansible_ssh_pass=osboxes.org
+localhosts ansible_host=192.168.1.15 ansible_connection=ssh ansible_port=22 ansible_user=osboxes ansible_ssh_pass=osboxes.org
 
 ansible_target ansible_host=192.168.1.22 ansible_connection=ssh ansible_port=22 ansible_user=osboxes ansible_ssh_pass=osboxes.org
 
