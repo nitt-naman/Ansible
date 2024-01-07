@@ -1,0 +1,4 @@
+server.ssl.key.store-type=PKCS12
+sever.ssl.key-store="abcd"
+server.ssl.key-store-password="abcd"
+server.ssl.key-alias=verify2

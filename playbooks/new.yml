@@ -2,9 +2,9 @@
 - hosts: web_nodes
   tasks:
     - name: open a file in root directory 
-      command: cat /home/osboxes/whoiam
+      command: cat /home/osboxes/secret-file
       register: myname
 
     - name: print the name in the file
       debug:
-        msg: "My name is {{myname}}"
+        msg: "My name is {{myname.stdout}}"

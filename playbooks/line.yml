@@ -1,0 +1,16 @@
+---
+- hosts: localhosts
+  become: yes
+  vars:
+    filename: "/etc/ansible/command.txt"
+  tasks:
+    - name: give the input
+      command: cat "{{filename}}"
+      register: myval
+
+    - set_fact:
+        my_var: "{{ myval.stdout | regex_search('server.ssl.key-alias=(.+)', '\\1') | first }}"
+
+    - debug:
+       msg: "{{my_var}}"
+

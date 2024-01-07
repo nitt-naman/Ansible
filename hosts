@@ -54,8 +54,7 @@
 
 localhosts ansible_host=192.168.1.23 ansible_connection=ssh ansible_port=22 ansible_user=osboxes ansible_ssh_pass=osboxes.org
 
-ansible_target ansible_host=192.168.1.26 ansible_connection=ssh ansible_port=22 ansible_user=osboxes ansible_ssh_pass=osboxes.org
+ansible_target ansible_host=192.168.1.22 ansible_connection=ssh ansible_port=22 ansible_user=osboxes ansible_ssh_pass=osboxes.org
 
 [web_nodes]
 localhosts
-ansible_target

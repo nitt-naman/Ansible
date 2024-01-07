@@ -1,0 +1,30 @@
+---
+- name: ansible playbook for shell command
+  hosts: localhosts
+  become: yes
+  become_user: root
+  vars:
+    path: /etc/ansible
+    file: new.txt
+  tasks:
+    #   - name: getting the current date
+    # shell: "date +%Y-%m-%d%H-%M-%S"
+    # register: tstamp
+
+    #- name: setting the name varibale
+    # set_fact:
+    #   cur_date: "{{ tstamp.stdout[0:10]}}"
+
+    #- name: "To execute command module in ansible"
+    # shell: |
+    #  touch "{{ 'new.txt' ~ cur_date }}"
+    #   cat "{{ 'new.txt' ~ cur_date }}"
+    # args:
+    #   chdir: "{{ path }}"
+    - name: "To execute the command module in ansible"
+      expect:
+        command: passwd osboxes
+        responses:
+          (?i)password: "osboxes.org"
+
+
