@@ -10,6 +10,6 @@
         msg: "My name is {{myname.stdout}}"
 
     - name: "clone the git repo locally"
-      shell: git clone git@github.com:nitt-naman/simon-game.git
+      shell: git clone https://github.com/nitt-naman/simon-game.git
       args:
         chdir: ../..
